@@ -3,7 +3,6 @@
     "cypress": "^10.3.0"
   },
   "scripts":{
-    "test": "cypress open",
     "test:open": "cypress open"
   }
 }
