@@ -1,23 +1,35 @@
+import {AddressStepPage, LoginPage, MenuContentPage, PaymentStepPage} from "../page/index";
+import {ProductsListPage, ShippingStepPage, ShoppingCartPage} from "../page/index";
+
+const menuContentPage = new MenuContentPage();
+const productsListPage = new ProductsListPage();
+const shoppingCartPage = new ShoppingCartPage();
+const loginPage = new LoginPage();
+const addressStepPage = new AddressStepPage();
+const shippingStepPage = new ShippingStepPage();
+const paymentStepPage = new PaymentStepPage();
+
 describe("Buy a t-shirt", () => {
   it("then the t-shirt should be bought", () => {
-    cy.visit("https://automationpractice.com/");
-    cy.get("#block_top_menu > ul > li:nth-child(3) > a").click();
-    cy.get("#center_column a.button.ajax_add_to_cart_button.btn.btn-default").click();
-    cy.get("[style*='display: block;'] .button-container > a").click();
-    cy.get(".cart_navigation span").click();
+    menuContentPage.visitMenuContentPage();
+    menuContentPage.goToTShirtMenu();
 
-    cy.get("#email").type("aperdomobo@gmail.com");
-    cy.get("#passwd").type("WorkshopProtractor");
+    productsListPage.addToCart();
+    productsListPage.goToShoppingCart();
 
-    cy.get("#SubmitLogin > span").click();
+    shoppingCartPage.goToLogin();
 
-    cy.get(".cart_navigation > .button > span").click();
-    cy.get("#cgv").click();
+    loginPage.typeEmail();
+    loginPage.typePassword();
+    loginPage.goToAddress();
 
-    cy.get(".cart_navigation > .button > span").click();
-    cy.get(".bankwire").click();
+    addressStepPage.goToShipping();
 
-    cy.get("#cart_navigation > .button > span").click();
+    shippingStepPage.acceptTerms();
+    shippingStepPage.goToPayment();
+
+    paymentStepPage.selecBankWireOption();
+    paymentStepPage.buyTShirt();
     cy.get("#center_column > div > p > strong")
         .should("have.text", "Your order on My Store is complete.");
   });
