@@ -15,7 +15,6 @@ describe("Buy a t-shirt", () => {
     cy.get("#cgv").click();
 
     cy.get(".cart_navigation > .button > span").click();
-    // cy.get('.label').should('have.text', 'In stock');
     cy.get(".bankwire").click();
 
     cy.get("#cart_navigation > .button > span").click();
