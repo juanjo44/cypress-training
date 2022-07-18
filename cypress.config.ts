@@ -9,6 +9,7 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       config.defaultCommandTimeout = 20000
       config.responseTimeout = 20000
+
       // IMPORTANT return the updated config object
       return config
     }
