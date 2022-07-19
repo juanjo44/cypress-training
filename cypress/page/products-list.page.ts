@@ -3,8 +3,8 @@ class ProductsListPage {
   private checkout: string;
 
   constructor (){
-    this.addToCartButton = ".ajax_add_to_cart_button > span";
-    this.checkout = ".button-container > .button-medium > span";
+    this.addToCartButton = "a[title='Add to cart'";
+    this.checkout = "Proceed to checkout";
   }
 
   public addToCart(): void {
@@ -12,7 +12,7 @@ class ProductsListPage {
   }
 
   public goToShoppingCart(): void {
-    cy.get(this.checkout).click();
+    cy.contains(this.checkout).click();
   }
 }
 
