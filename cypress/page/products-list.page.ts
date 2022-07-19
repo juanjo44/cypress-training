@@ -3,7 +3,7 @@ class ProductsListPage {
   private checkout: string;
 
   constructor (){
-    this.addToCartButton = "a[title='Add to cart'";
+    this.addToCartButton = "a[title='Add to cart']";
     this.checkout = "Proceed to checkout";
   }
 

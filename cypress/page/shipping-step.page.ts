@@ -3,7 +3,7 @@ class ShippingStepPage {
     private checkoutShipping: string;
     constructor () {
         this.terms = "#cgv"
-        this.checkoutShipping = ".cart_navigation > .button > span";
+        this.checkoutShipping = "button[name='processCarrier']";
     }
 
     public acceptTerms(): void {
