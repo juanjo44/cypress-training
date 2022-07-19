@@ -6,7 +6,7 @@ class PaymentStepPage {
   constructor () {
     this.bankWireOption = ".bankwire";
     this.order = "#cart_navigation > .button > span";
-    this.message = "#center_column > div > p > strong";
+    this.message = ".cheque-indent > .dark";
   }
 
   public selecBankWireOption(): void{
