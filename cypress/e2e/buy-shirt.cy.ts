@@ -29,6 +29,7 @@ describe("Buy a t-shirt", () => {
     paymentStepPage.selecBankWireOption();
     paymentStepPage.buyTShirt();
 
-    paymentStepPage.getOrderMessage().should("have.text", "Your order on My Store is complete.");
+    paymentStepPage.getOrderMessage()
+      .should("have.text", "Your order on My Store is complete.");
   });
 });
