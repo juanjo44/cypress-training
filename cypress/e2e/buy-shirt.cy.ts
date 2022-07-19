@@ -30,6 +30,6 @@ describe("Buy a t-shirt", () => {
     paymentStepPage.buyTShirt();
 
     paymentStepPage.getOrderMessage()
-      .should("have.text", "Your order on My Store is complete.");
+        .should("have.text", "Your order on My Store is complete.");
   });
 });
