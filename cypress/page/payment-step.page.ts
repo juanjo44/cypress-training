@@ -1,10 +1,12 @@
 class PaymentStepPage {
   private bankWireOption: string;
   private order: string;
+  private message: string;
 
   constructor () {
     this.bankWireOption = ".bankwire";
     this.order = "#cart_navigation > .button > span";
+    this.message = "#center_column > div > p > strong";
   }
 
   public selecBankWireOption(): void{
@@ -13,6 +15,10 @@ class PaymentStepPage {
 
   public buyTShirt(): void {
     cy.get(this.order).click();
+  }
+
+  public getOrderMessage() {
+    return cy.get(this.message);
   }
 }
 
