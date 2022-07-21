@@ -4,8 +4,13 @@ describe("the user navigates to the dresses page should", () => {
   // Arrange
   let menuContentPage: MenuContentPage;
   let dressesListPage: DressesListPage;
-  const allDressesName = ["Printed Dress", "Printed Dress", "Printed Summer Dress", "Printed Summer Dress",
-    "Printed Chiffon Dress"];
+  const allDressesName = [
+    "Printed Dress",
+    "Printed Dress",
+    "Printed Summer Dress",
+    "Printed Summer Dress",
+    "Printed Chiffon Dress"
+  ];
 
   before(() => {
     menuContentPage = new MenuContentPage();
