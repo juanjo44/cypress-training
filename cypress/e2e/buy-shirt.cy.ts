@@ -29,7 +29,7 @@ describe("Buy a t-shirt", () => {
     // Act
     menuContentPage.goToTShirtMenu();
 
-    productsListPage.addToCart();
+    productsListPage.addToCart("Faded Short Sleeve T-shirts");
     productsListPage.goToShoppingCart();
 
     shoppingCartPage.goToLogin();
