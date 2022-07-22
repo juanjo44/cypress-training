@@ -12,6 +12,17 @@ export default defineConfig({
 
       // IMPORTANT return the updated config object
       return config
-    }
+    },
+    reporter: "cypress-multi-reporters",
+    reporterOptions: {
+      reporterEnabled: "mochawesome",
+      mochawesomeReporterOptions: {
+        reportDir: "cypress/reports/mocha",
+        quite: true,
+        overwrite: false,
+        html: false,
+        json: true,
+      },
+    },
   }
 })
