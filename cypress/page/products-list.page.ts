@@ -17,7 +17,7 @@ class ProductsListPage {
     cy.contains(this.checkout).click();
   }
 
-  public findProductByName(productName:string){
+  private findProductByName(productName:string){
     return cy.get(this.allProducts).filter(`:contains(${productName})`);
   }
 }
