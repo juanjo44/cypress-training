@@ -33,6 +33,7 @@ class StudentFormPage {
 
   public fillForm(userInformation: PersonalInformation)
     {
+    
     cy.get(this.nameInput).type(userInformation.name);
     cy.get(this.lastNameInput).type(userInformation.lastName);
     cy.get(this.emailInput).type(userInformation.email);
@@ -55,10 +56,13 @@ class StudentFormPage {
   }
 
   private pickDate (date: Date) {
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
     cy.get("#dateOfBirthInput").click();
-    cy.get(".react-datepicker__month-select").select(date.getMonth());
-    cy.get(".react-datepicker__year-select").select(`${date.getFullYear()}`);
-    cy.get(".react-datepicker__day").filter(`:contains("${date.getDate()}")`).not(".react-datepicker__day--outside-month").click();
+    cy.get(".react-datepicker__month-select").select(month);
+    cy.get(".react-datepicker__year-select").select(`${year}`);
+    cy.get(".react-datepicker__day").filter(`:contains("${day}")`).not(".react-datepicker__day--outside-month").click();
   }
 
 }
