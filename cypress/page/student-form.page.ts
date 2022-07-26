@@ -11,6 +11,10 @@ class StudentFormPage {
   private citySelct: string;
   private submitButton: string;
   private modalContent: string;
+  private dateInput: string;
+  private monthSelect: string;
+  private yearSelect: string;
+  private dayOption: string;
   
   constructor() {
     this.studentFormURL = "https://demoqa.com/automation-practice-form";
@@ -25,6 +29,10 @@ class StudentFormPage {
     this.citySelct = "#react-select-4-input";
     this.submitButton = "#submit";
     this.modalContent = ".modal-content";
+    this.dateInput = "#dateOfBirthInput";
+    this.monthSelect = ".react-datepicker__month-select";
+    this.yearSelect = ".react-datepicker__year-select";
+    this.dayOption = ".react-datepicker__day";
   }
 
   public visStudentFormPage () {
@@ -59,10 +67,10 @@ class StudentFormPage {
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
-    cy.get("#dateOfBirthInput").click();
-    cy.get(".react-datepicker__month-select").select(month);
-    cy.get(".react-datepicker__year-select").select(`${year}`);
-    cy.get(".react-datepicker__day").filter(`:contains("${day}")`).not(".react-datepicker__day--outside-month").click();
+    cy.get(this.dateInput).click();
+    cy.get(this.monthSelect).select(month);
+    cy.get(this.yearSelect).select(`${year}`);
+    cy.get(this.dayOption).filter(`:contains("${day}")`).not(".react-datepicker__day--outside-month").click();
   }
 
 }
