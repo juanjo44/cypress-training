@@ -3,12 +3,14 @@ class UploadPage {
   private uploadInput: string;
   private submitButton: string;
   private headerMessage:string;
+  private fileUploaded: string;
 
   constructor () {
     this.pageURL = "https://the-internet.herokuapp.com/upload";
     this.uploadInput = "#file-upload";
     this.submitButton = "#file-submit";
     this.headerMessage = ".example > h3"
+    this.fileUploaded = "#uploaded-files"
 
   }
 
@@ -21,8 +23,12 @@ class UploadPage {
     cy.get(this.submitButton).click()
   }
 
-  public getTitle () {
+  public getConfirmation () {
     return cy.get(this.headerMessage)
+  }
+
+  public getFileName () {
+    return cy.get(this.fileUploaded);
   }
 }
 
