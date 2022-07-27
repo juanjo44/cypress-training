@@ -16,7 +16,7 @@ class DownloadPage {
   }
 
   public getFileDownloadName(fileName: string) {
-    return cy.readFile(`cypress\\Downloads\\${fileName}`);
+    return cy.readFile(`cypress/Downloads/${fileName}`);
   }
 }
 
