@@ -13,6 +13,7 @@ export default defineConfig({
       // IMPORTANT return the updated config object
       return config
     },
+    retries:3,
     reporter: "cypress-multi-reporters",
     reporterOptions: {
       reporterEnabled: "mochawesome",
