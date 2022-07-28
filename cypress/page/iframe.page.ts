@@ -14,7 +14,7 @@ class IFramePage {
   }
 
   public getFrameTitle () {
-    // cy.frameLoaded(this.pageIframe, {url: '/default.asp' })
+    cy.frameLoaded(this.pageIframe, {url: '/default.asp' })
     return cy.iframe(this.pageIframe).find('h1')
   }
 

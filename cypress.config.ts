@@ -14,6 +14,7 @@ export default defineConfig({
       return config
     },
     retries:3,
+    chromeWebSecurity: false,
     reporter: "cypress-multi-reporters",
     reporterOptions: {
       reporterEnabled: "mochawesome",
