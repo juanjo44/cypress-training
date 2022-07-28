@@ -15,6 +15,10 @@ describe("This will check the iframe", () => {
   });
 
   it("It will verify CSS iframe", () => {
-    iframePage.goToCssPageInFrame().should("contain.text", "CSS Tutorial");
+    // Act
+    iframePage.goToCssPageInFrame();
+
+    // Assert
+    iframePage.getFrameTitle().should("contain.text", "CSS Tutorial");
   });
 });

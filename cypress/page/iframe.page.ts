@@ -14,14 +14,12 @@ class IFramePage {
   }
 
   public getFrameTitle () {
-    cy.frameLoaded(this.pageIframe, {url: '/default.asp' })
     return cy.iframe(this.pageIframe).find('h1')
   }
 
   public goToCssPageInFrame () {
     cy.iframe(this.pageIframe).find("a[title='CSS Tutorial']").click();
     cy.frameLoaded(this.pageIframe, {url: this.pageCssURL })
-    return cy.iframe(this.pageIframe).find('h1');
   }
 
 }
